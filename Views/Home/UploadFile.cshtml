@@ -1,0 +1,21 @@
+﻿@model Banking.Models.FileModel
+@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>UploadFile</h2>
+
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    <div>
+        @Html.TextBoxFor(m => m.file, new { type = "file"})
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.password)
+        @Html.TextBoxFor(m => m.password)
+    </div>
+    <br />
+    <button type="submit">Submit</button>
+}
